@@ -1,0 +1,61 @@
+Ocean doet sensoren, tempsensor en drukknop op ??????
+
+
+Vitaly doet de motor en LED op Arduino en wacht op lln 1 tot hij klaar is met temp sensor te meten
+
+
+
+Mauro Wacht op lln 1 en 2 tot ze klaar zijn
+
+Backlog:
+Vitaly zal een rode/groene LED gebruiken
+Ocean zal proberen de tempsensor uit te meten, indien dit niet lukt zal hij voor een andere zoeken
+Mauro zal al proberen de main code correct te zetten tot vitaly en ocean klaar zijn.
+
+Vitaly zal kijken hoe hij de motor+ fan aanzet via ESP32.
+benodigdheden
+esp32
+led groen rood
+temp sensor
+motor/ventilator
+drukknop
+ledstrip
+
+backlog items
+- aansturen led en documenteren
+- aansturen ledddimmer en docu
+- aansturen fan
+- aansturen motor DC
+
+
+Vitaly zal 2 leds proberen, 1 groene  en 1 rode
+
+
+Sprint 1:
+
+Lln 1 Doet temperatuursensor
+Lln 2 doet de motor
+Lln 3 structuur correct plaatsen (misschien al interface?)
+
+Sprint 2:
+Lln 1 doet Drukknop
+Lln 2 doet LED
+lln 3 wacht (misschien al interface?)
+
+
+Sprint 3:
+Lln 1 doet 
+lln 2 doet fan met optionele snelheden
+lln 3 doet codestructuur/interface en implementeert beide secundaire c++ files
+
+
+
+
+
+
+
+
+
+
+
+
