@@ -13,7 +13,7 @@ Ocean zal proberen de tempsensor uit te meten, indien dit niet lukt zal hij voor
 Hij zal ook een drukknop uitlezen
 Mauro zal al proberen de main code correct te zetten tot vitaly en ocean klaar zijn.
 
-Vitaly zal kijken hoe hij de motor+ fan aanzet via ESP32.
+Vitaly zal kijken hoe hij de motor+ fan aanzet via arduino.
 benodigdheden
 esp32
 arduino
@@ -36,20 +36,20 @@ Vitaly zal 2 leds proberen, 1 groene  en 1 rode
 
 Sprint 1:
 
-Lln 1 Doet temperatuursensor
-Lln 2 doet de motor
-Lln 3 structuur correct plaatsen (misschien al interface?)
+Ocean Doet temperatuursensoren op sensor.ccp en testen
+Vitaly doet de motor op actuator.ccp en testen 
+Mauro structuur correct plaatsen op main.ccp 
 
 Sprint 2:
-Lln 1 doet Drukknop
-Lln 2 doet LED
-lln 3 wacht (misschien al interface?)
+Ocean doet Drukknop ook op sensor.ccp en testen
+Vitaly doet LED ook op actuator op actuator.ccp en testen 
+Mauro probeert de UI te verbeteren en stuurt waarders naar de webserver voor goede weergave
 
 
 Sprint 3:
-Lln 1 doet website 
-lln 2 doet fan met optionele snelheden
-lln 3 doet codestructuur/interface en implementeert beide secundaire c++ files
+Ocean doet afwerking website 
+Vitaly doet fan met optionele snelheden en testen
+Mauro doet codestructuur/interface en implementeert beide secundaire c++ files
 
 
 
