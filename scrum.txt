@@ -36,7 +36,7 @@ Vitaly zal 2 leds proberen, 1 groene  en 1 rode
 
 Sprint 1:
 
-Ocean Doet temperatuursensoren op sensor.ccp en testen
+Ocean soldeert de temperatuursensor en meet deze uit, dan zet hij deze  op sensor.ccp 
 Vitaly doet de motor op actuator.ccp en testen 
 Mauro structuur correct plaatsen op main.ccp 
 
