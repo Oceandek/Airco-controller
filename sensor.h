@@ -17,4 +17,18 @@ class Temperatuursensor {
 
 };
 
+class Drukknop {
+    private:
+    int value;
+
+    public:
+    Drukknop();
+    void setdrukknopstatus(int t);
+    int getdrukknopstatus();
+
+
+};
+
+
+
 #endif

@@ -13,7 +13,19 @@ void Temperatuursensor::settemperatuursensor(float i) {
 
 
 float  Temperatuursensor::gettemperatuursensor() {
-    return temperatuur ;
+    return temperatuur;
 }
 
+Drukknop::Drukknop(){
+    value = 999;
+}
+
+
+void Drukknop::setdrukknopstatus(int get) {
+    value = get;
+}
+
+int Drukknop::getdrukknopstatus() {
+    return value;
+}
 
