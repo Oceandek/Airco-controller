@@ -13,16 +13,6 @@ class Actuator {
     void Aan(bool aan);
 };
 
-class Buzzer {
-  private:
-    int pin;
-
-  public:
-    Buzzer(int pin);
-    void begin();
-    void Aan(bool aan);
-};
-
 class LEDS {
   private:
     int groenPin;
