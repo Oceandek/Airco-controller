@@ -37,8 +37,7 @@ Vitaly zal 2 leds proberen, 1 groene  en 1 rode
 Sprint 1:
 
 Ocean soldeert de temperatuursensor en meet deze uit, dan zet hij deze  op sensor.ccp 
-Vitaly doet de motor op actuator.ccp en testen 
-Mauro structuur correct plaatsen op main.ccp 
+Vitaly doet de motor/leds op actuator.ccp en testen 
 
 Sprint 2:
 Vitaly werkt de header en cpp file af voor de actuator en leds die gebruikt gaan worden in de main.
