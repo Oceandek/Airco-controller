@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-class AircoActuator {
+class Actuator {
   private:
     int motorPin;
 
@@ -33,7 +33,7 @@ class LEDS {
     void begin();
     void groenAan();
     void roodAan();
-    void allesUit();
+    void uit();
 };
 
 #endif
