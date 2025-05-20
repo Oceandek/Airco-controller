@@ -41,14 +41,12 @@ Vitaly doet de motor op actuator.ccp en testen
 Mauro structuur correct plaatsen op main.ccp 
 
 Sprint 2:
-Ocean doet Drukknop ook op sensor.ccp en testen
-Vitaly doet LED ook op actuator op actuator.ccp en testen 
-Mauro probeert de UI te verbeteren en stuurt waarders naar de webserver voor goede weergave
-
+Vitaly werkt de header en cpp file af voor de actuator en leds die gebruikt gaan worden in de main.
+Mauro past de klaargemaakte header en sensor ccp file toe aan de main (de main wordt door ocean in sprint 3 afgewerkt)
 
 Sprint 3:
-Ocean doet afwerking website 
-Vitaly doet fan met optionele snelheden en testen
+Ocean doet afwerking website en main op basis van wat mauro heeft gedaan
+Vitaly doet aanpassingen voor regelbare snelheden 
 Mauro doet codestructuur/interface en implementeert beide secundaire c++ files
 
 
