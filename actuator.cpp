@@ -1,16 +1,16 @@
-#include "Actuator.h"
+#include "actuator.h"
 #include <Arduino.h>
 
-Actuator::Actuator(int pin) {
+actuator::actuator(int pin) {
     motorPin = pin;
 }
 
-void Actuator::begin() {
+void actuator::begin() {
     pinMode(motorPin, OUTPUT);
     digitalWrite(motorPin, LOW);
 }
 
-void Actuator::aanzetten(bool aan) {
+void actuator::aanzetten(bool aan) {
     digitalWrite(motorPin, HIGH);
 }
 
@@ -28,19 +28,19 @@ void LEDs::begin() {
     allesUit();
 }
 
-void LEDs::groenAan() {
+void LEDs::groenaan() {
     digitalWrite(groenPin, HIGH);
     digitalWrite(roodPin, LOW);
     digitalWrite(blauwPin, LOW);
 }
 
-void LEDs::roodAan() {
+void LEDs::roodaan() {
     digitalWrite(groenPin, LOW);
     digitalWrite(roodPin, HIGH);
     digitalWrite(blauwPin, LOW);
 }
 
-void LEDs::blauwKnipperen() {
+void LEDs::blauwknipperen() {
     for (int i = 0; i < 5; i++) {
         digitalWrite(blauwPin, HIGH);
         delay(200);
@@ -49,7 +49,7 @@ void LEDs::blauwKnipperen() {
     }
 }
 
-void LEDs::allesUit() {
+void LEDs::allesuit() {
     digitalWrite(groenPin, LOW);
     digitalWrite(roodPin, LOW);
     digitalWrite(blauwPin, LOW);
