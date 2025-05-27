@@ -14,7 +14,6 @@ public:
     Temperatuursensor();
     bool begin(); 
     float gettemperatuursensor();  
-    float getvochtigheid();  
 };
 
 class Drukknop {
