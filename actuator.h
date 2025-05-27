@@ -8,9 +8,9 @@ class Actuator {
     int motorPin;
 
   public:
-    AircoActuator(int motorpin);
+    Actuator(int motorpin);
     void begin();
-    void Aan(bool aan);
+    void aanzetten(bool aan);
 };
 
 class LEDS {
