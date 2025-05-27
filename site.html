@@ -46,5 +46,31 @@
 
 </body>
 <script src="js/javascript.js"></script>
+<script>
+async function haalDataOp() {
+  try {
+    const response = await fetch('https://api.jsonbin.io/v3/b/6835ae4e8561e97a501c1c7d/latest', {
+      headers: {
+        'X-Master-Key': '$2a$10$w30Ri0Qr84FdWX3uwwquC..Cp0OVIlTiHCSedLYFv6aYUkF2GQS2e'
+      }
+    });
+    const json = await response.json();
+    const data = json.record;
+
+    document.getElementById('Temp').textContent = data.temperatuur + " °C";
+    document.getElementById('Knop').textContent = data.knopwaarde ? "INGEDRUKT" : "NIET INGEDRUKT";
+    document.getElementById('Ledstatus').textContent = data.leds ? "AAN" : "UIT";
+    document.getElementById('Raamstatus').textContent = data.raam ? "OPEN" : "DICHT";
+    document.getElementById('Aircostatus').textContent = data.airco ? "AAN" : "UIT";
+
+  } catch (error) {
+    console.error("Fout bij ophalen data:", error);
+  }
+}
+
+// Elke 5 seconden vernieuwen
+setInterval(haalDataOp, 5000);
+haalDataOp();  // direct bij laden
+</script>
 
 </html>
