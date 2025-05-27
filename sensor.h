@@ -1,34 +1,29 @@
 #ifndef SENSOR_H
 #define SENSOR_H
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include <Adafruit_AHTX0.h>
+#include <Wire.h>
 
 class Temperatuursensor {
-    private:
-    int temperatuur;
+private:
+    Adafruit_AHTX0 aht;
+    float temperatuur;
+    bool initialized;
 
-    public:
+public:
     Temperatuursensor();
-    void settemperatuursensor(float t);
-    float gettemperatuursensor();
-
-
+    bool begin(); 
+    float gettemperatuursensor();  
+    float getvochtigheid();  
 };
 
 class Drukknop {
-    private:
-    int value;
+private:
+    int pin;
 
-    public:
-    Drukknop();
-    void setdrukknopstatus(int t);
-    int getdrukknopstatus();
-
-
+public:
+    Drukknop(int pinNum);
+    bool getdrukknopstatus();  
 };
-
-
 
 #endif
