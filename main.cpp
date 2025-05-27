@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "JsonbinSender.h"
+#include "JSONAPI.h"
 #include "actuator.h"
 #include "sensor.h"
 
@@ -8,39 +8,50 @@ JsonbinSender sender("VTI-Guest", "Wifi0104", "6835ae4e8561e97a501c1c7d", "$2a$1
 
 // Sensor- en actuatorobjecten
 Temperatuursensor tempSensor;
-Drukknop knop(15); // Gebruik de juiste pin voor de knop
+Drukknop knop(15); // Pas pin aan voor de drukknop
+LEDS leds(2, 3, 4); // Pas aan naar je echte LED-pinnen
+Actuator airco(5);  // Pas aan naar je motorPin
 
 void setup() {
     Serial.begin(115200);
     sender.connectWiFi();
 
-    if (tempSensor.begin()) {
-        Serial.println("AHT sensor geïnitialiseerd!");
-    } else {
-        Serial.println("AHT sensor NIET geïnitialiseerd!");
-    }
-
-    leds.uit();
-    leds.RoodAan();
+    tempSensor.begin();
+    leds.begin();
+    airco.begin();
 }
 
 void loop() {
     float temperatuur = tempSensor.gettemperatuursensor();
     bool knopstatus = knop.getdrukknopstatus();
 
-    // Stuur gegevens naar Jsonbin.io
-    sender.stuurData(temperatuur, knopstatus, leds.isAan(), raam.isOpen(), airco.isAan());
-
-    // Actuatorlogica
+    // Bepaal logica
+    bool aircoAan = false;
     if (temperatuur >= 25.0 && knopstatus) {
         Serial.println("De airco is actief.");
-        leds.groenAan();
-    } else if (temperatuur >= 25.0 && !knopstatus) {
+        leds.groenaan();
+        airco.aanzetten(true);
+        aircoAan = true;
+
+    } 
+
+    else if (temperatuur >= 25.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
-        leds.blauwAan();
-    } else {
-        leds.roodAan();
+        leds.blauwknipperen();
+        airco.aanzetten(false);
+
+    } 
+
+    else {
+        leds.roodaan();
+        airco.aanzetten(false);
     }
 
-    delay(60000); // Wacht 1 minuut voordat je opnieuw meet en verstuurt
+    // Simuleer raamstatus (drukknop = raam open/dicht)
+    bool raamOpen = !knopstatus;
+
+    // Stuur data naar Jsonbin
+    sender.sendData(temperatuur, knopstatus, groen, blauw, rood, raamOpen, aircoAan);
+
+    delay(60000); // Wacht 1 minuut
 }

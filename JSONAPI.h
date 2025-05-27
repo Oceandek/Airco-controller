@@ -27,7 +27,7 @@ public:
         Serial.println("verbonden!");
     }
 
-    void sendData(float temperatuur, bool knopwaarde, bool leds, bool raam, bool airco) {
+    void sendData(float temperatuur, bool knopwaarde, bool groen, bool blauw, bool rood, bool raam, bool airco) {
         if (WiFi.status() == WL_CONNECTED) {
             HTTPClient http;
 
