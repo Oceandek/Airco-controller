@@ -8,10 +8,13 @@
 using namespace std;
 
 
-int setup() {
+void setup() {
     
-    temperatuursensor = 26.0;
-    drukknopstatus = LOW;
+    temperatuursensor (26.0);
+    drukknopstatus = (HIGH);
+
+    leds.uit();
+    leds.RoodAan();
 
     if (temperatuursensor.gettemperatuursensor() >= 25.0 && getdrukknopstatus() digitalRead(pin) == HIGH;)
     {
@@ -22,7 +25,6 @@ int setup() {
     else {
         (RoodAan());
     }
-
 
 
     if (temperatuursensor.gettemperatuursensor() >= 25.0 AND getdrukknopstatus() digitalRead(pin) == LOW;)
