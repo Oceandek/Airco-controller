@@ -35,7 +35,10 @@ public:
             StaticJsonDocument<200> doc;
             doc["temperatuur"] = temperatuur;
             doc["knopwaarde"] = knopwaarde;
-            doc["leds"] = leds;
+            JsonObject leds = doc.createNestedObject("leds");
+            leds["groen"] = groen;
+            leds["blauw"] = blauw;
+            leds["rood"] = rood;
             doc["raam"] = raam;
             doc["airco"] = airco;
 

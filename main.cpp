@@ -12,6 +12,11 @@ Drukknop knop(15); // Pas pin aan voor de drukknop
 LEDS leds(2, 3, 4); // Pas aan naar je echte LED-pinnen
 Actuator airco(5);  // Pas aan naar je motorPin
 
+// LED-statusen bijhouden
+bool groen = false;
+bool blauw = false;
+bool rood = false;
+
 void setup() {
     Serial.begin(115200);
     sender.connectWiFi();
@@ -25,25 +30,31 @@ void loop() {
     float temperatuur = tempSensor.gettemperatuursensor();
     bool knopstatus = knop.getdrukknopstatus();
 
+    // Reset LED-statusen
+    groen = false;
+    blauw = false;
+    rood = false;
+
     // Bepaal logica
     bool aircoAan = false;
+
     if (temperatuur >= 25.0 && knopstatus) {
         Serial.println("De airco is actief.");
-        leds.groenaan();
+        leds.groenAan();
+        groen = true;
         airco.aanzetten(true);
         aircoAan = true;
 
-    } 
-
-    else if (temperatuur >= 25.0 && !knopstatus) {
+    } else if (temperatuur >= 25.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
-        leds.blauwknipperen();
+        leds.blauwKnipperen();
+        blauw = true;  // Let op: je knippert de LED, we zetten 'blauw' nu tijdelijk aan
         airco.aanzetten(false);
 
-    } 
-
-    else {
-        leds.roodaan();
+    } else {
+        Serial.println("De airco is uit.");
+        leds.roodAan();
+        rood = true;
         airco.aanzetten(false);
     }
 

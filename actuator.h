@@ -20,12 +20,12 @@ class LEDS {
     int blauwPin;
 
   public:
-    StatusLEDs(int groenPin, int roodPin);
+    LEDS(int groenPin, int roodPin, int blauwPin);
     void begin();
-    void groenAan();
-    void roodAan();
+    void groenaan();
+    void roodaan();
     void blauwPin();
-    void uit();
+    void allesuit();
 };
 
 #endif

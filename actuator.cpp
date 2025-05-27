@@ -1,16 +1,16 @@
 #include "actuator.h"
 #include <Arduino.h>
 
-actuator::actuator(int pin) {
+Actuator::Actuator(int pin) {
     motorPin = pin;
 }
 
-void actuator::begin() {
+void Actuator::begin() {
     pinMode(motorPin, OUTPUT);
     digitalWrite(motorPin, LOW);
 }
 
-void actuator::aanzetten(bool aan) {
+void Actuator::aanzetten(bool aan) {
     digitalWrite(motorPin, HIGH);
 }
 
@@ -25,7 +25,7 @@ void LEDs::begin() {
     pinMode(groenPin, OUTPUT);
     pinMode(roodPin, OUTPUT);
     pinMode(blauwPin, OUTPUT);
-    allesUit();
+    allesuit();
 }
 
 void LEDs::groenaan() {
