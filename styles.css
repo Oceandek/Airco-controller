@@ -1,0 +1,52 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+div {
+    background-color: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+
+#Temp, #Knop, #Led, #Raam, #Airco {
+    transition: background-color 0.3s ease;
+}
+
+#Temp:hover, #Knop:hover, #Led:hover, #Raam:hover, #Airco:hover {
+    background-color: #e8f5e9;
+}
+
+p {
+    font-size: 18px;
+    margin: 5px 0 0 0;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    div {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
