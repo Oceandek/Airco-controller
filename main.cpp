@@ -1,35 +1,39 @@
+#include <arduino.h>
 
-#ifndef SENSOR_H
-#define SENSOR_H
-#ifndef ACTURATOR_H
-#define ACTURATOR_H
+#include "actuator.h"
+#include "sensor.h"
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
+
+int setup() {
     
-    int Drukknop::getdrukknopstatus() {
-    return value;
+    temperatuursensor = 26.0;
+    drukknopstatus = LOW;
+
+    if (temperatuursensor.gettemperatuursensor() >= 25.0 && getdrukknopstatus() digitalRead(pin) == HIGH;)
+    {
+        cout << "De airco is actief." << endl;
+        (groenAan());
     }
-    void Temperatuursensor::settemperatuursensor(float i) {
-    temperatuur = i;
-    if i >= 25.0
+
+    else {
+        (RoodAan());
+    }
 
 
-    if i >= 25.0 AND value != 999 {
-        void LEDs::groenAan() {
-        }
 
-    else 
+    if (temperatuursensor.gettemperatuursensor() >= 25.0 AND getdrukknopstatus() digitalRead(pin) == LOW;)
+    {
+        cout << "De airco stuurt een waarschuwing." << endl;
+        (BlauwAan());
+    }
 
+    else {
+        (RoodAan());
+    }
 
     return 0;
 }
-
-
-
-
-
-
-#endif
-#endif
