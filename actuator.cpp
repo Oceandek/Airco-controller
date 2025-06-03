@@ -42,6 +42,8 @@ void LEDs::roodaan() {
 
 void LEDs::blauwKnipperen() {
     for (int i = 0; i < 5; i++) {
+        digitalWrite(groenPin, LOW);
+        digitalWrite(roodPin, LOW);
         digitalWrite(blauwPin, HIGH);
         delay(200);
         digitalWrite(blauwPin, LOW);
