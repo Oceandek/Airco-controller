@@ -9,7 +9,7 @@ JsonbinSender sender("VTI-Guest", "Wifi0104", "6835ae4e8561e97a501c1c7d", "$2a$1
 // Sensor- en actuatorobjecten
 Temperatuursensor tempSensor;
 Drukknop knop(15); 
-LEDS leds(2, 4, 5); 
+LEDs leds(2, 4, 5); 
 Actuator airco(18);  
 
 // LED-statusen bijhouden
@@ -45,7 +45,7 @@ void loop() {
 
     } else if (temperatuur >= 25.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
-        leds.blauwKnipperen();
+        leds.blauwPin();
         blauw = true;  
         airco.aanzetten(false);
 
