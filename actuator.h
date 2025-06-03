@@ -13,14 +13,14 @@ class Actuator {
     void aanzetten(bool aan);
 };
 
-class LEDS {
+class LEDs {
   private:
     int groenPin;
     int roodPin;
     int blauwPin;
 
   public:
-    LEDS(int groenPin, int roodPin, int blauwPin);
+    LEDs(int groenPin, int roodPin, int blauwPin);
     void begin();
     void groenaan();
     void roodaan();
