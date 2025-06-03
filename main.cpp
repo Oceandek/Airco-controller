@@ -36,14 +36,14 @@ void loop() {
 
     bool aircoAan = false;
 
-    if (temperatuur >= 25.0 && knopstatus) {
+    if (temperatuur >= 20.0 && knopstatus) {
         Serial.println("De airco is actief.");
         leds.groenaan();
         groen = true;
         airco.aanzetten(true);
         aircoAan = true;
 
-    } else if (temperatuur >= 25.0 && !knopstatus) {
+    } else if (temperatuur >= 20.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
         leds.blauwKnipperen();
         blauw = true;  
@@ -52,6 +52,7 @@ void loop() {
 
     } else {
         Serial.println("De airco is uit.");
+
         leds.roodaan();
         rood = true;
         airco.aanzetten(false);
@@ -64,5 +65,5 @@ void loop() {
     // Stuur data naar Jsonbin
     sender.sendData(temperatuur, knopstatus, groen, blauw, rood, raamOpen, aircoAan);
 
-    delay(60000); // Wacht 1 minuut
+    delay(20000); // Wacht 20 seconden
 }
