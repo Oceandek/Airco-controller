@@ -40,7 +40,7 @@ void LEDs::roodaan() {
     digitalWrite(blauwPin, LOW);
 }
 
-void LEDs::blauwknipperen() {
+void LEDs::blauwPin() {
     for (int i = 0; i < 5; i++) {
         digitalWrite(blauwPin, HIGH);
         delay(200);
