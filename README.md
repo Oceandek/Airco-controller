@@ -82,11 +82,11 @@ Toont live status van het systeem via data die van JsonBin wordt opgehaald met J
 
 ## 📷 Screenshot (voorbeeld)
 
-> (Hier kan je een screenshot toevoegen van je website of breadboardopstelling)
+---
 
 ---
 
 ## 👨‍💻 Gemaakt door
 
-Ocean Dekeyser – VTI Brugge, richting Applicatie- en Databeheer  
+Vitaly Minkov, Mauro Vanmaldeghem & Ocean Dekeyser – VTI Brugge, richting Applicatie- en Databeheer  
 Schoolproject 2025
