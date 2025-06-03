@@ -24,7 +24,7 @@ class LEDs {
     void begin();
     void groenaan();
     void roodaan();
-    void blauwPin();
+    void blauwKnipperen();
     void allesuit();
 };
 
