@@ -46,7 +46,10 @@ void loop() {
     } else if (temperatuur >= 20.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
         leds.blauwKnipperen();
+        leds.roodaan();
+
         blauw = true;  
+        rood = true;
         airco.aanzetten(false);
         aircoAan = false;
 
