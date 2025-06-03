@@ -48,12 +48,15 @@ void loop() {
         leds.blauwPin();
         blauw = true;  
         airco.aanzetten(false);
+        aircoAan = false;
 
     } else {
         Serial.println("De airco is uit.");
         leds.roodAan();
         rood = true;
         airco.aanzetten(false);
+        aircoAan = false;
+
     }
 
     bool raamOpen = !knopstatus;
