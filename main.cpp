@@ -8,9 +8,9 @@ JsonbinSender sender("VTI-Guest", "Wifi0104", "6835ae4e8561e97a501c1c7d", "$2a$1
 
 // Sensor- en actuatorobjecten
 Temperatuursensor tempSensor;
-Drukknop knop(15); // Pas pin aan voor de drukknop
-LEDS leds(2, 3, 4); // Pas aan naar je echte LED-pinnen
-Actuator airco(5);  // Pas aan naar je motorPin
+Drukknop knop(15); 
+LEDS leds(2, 4, 5); 
+Actuator airco(18);  
 
 // LED-statusen bijhouden
 bool groen = false;
@@ -30,12 +30,10 @@ void loop() {
     float temperatuur = tempSensor.gettemperatuursensor();
     bool knopstatus = knop.getdrukknopstatus();
 
-    // Reset LED-statusen
     groen = false;
     blauw = false;
     rood = false;
 
-    // Bepaal logica
     bool aircoAan = false;
 
     if (temperatuur >= 25.0 && knopstatus) {
@@ -48,7 +46,7 @@ void loop() {
     } else if (temperatuur >= 25.0 && !knopstatus) {
         Serial.println("De airco stuurt een waarschuwing.");
         leds.blauwKnipperen();
-        blauw = true;  // Let op: je knippert de LED, we zetten 'blauw' nu tijdelijk aan
+        blauw = true;  
         airco.aanzetten(false);
 
     } else {
@@ -58,7 +56,6 @@ void loop() {
         airco.aanzetten(false);
     }
 
-    // Simuleer raamstatus (drukknop = raam open/dicht)
     bool raamOpen = !knopstatus;
 
     // Stuur data naar Jsonbin
