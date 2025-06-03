@@ -1,4 +1,4 @@
-#include <Arduino.h>More actions
+#include <Arduino.h>
 #include "JSONAPI.h"
 #include "actuator.h"
 #include "sensor.h"
