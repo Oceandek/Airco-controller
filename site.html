@@ -61,9 +61,9 @@ async function haalDataOp() {
 
     document.getElementById('Temp').textContent = data.temperatuur + " °C";
     document.getElementById('Knop').textContent = data.knopwaarde ? "INGEDRUKT" : "NIET INGEDRUKT";
-    document.getElementById('Groen').textContent = data.groen ? "Groene LED: AAN" : "Groene LED: UIT";
-    document.getElementById('Blauw').textContent = data.blauw ? "Blauwe LED: AAN" : "Blauwe LED: UIT";
-    document.getElementById('Rood').textContent = data.rood ? "Rode LED: AAN" : "Rode LED: UIT";
+    document.getElementById('Groen').textContent = data.leds.groen ? "Groene LED: AAN" : "Groene LED: UIT";
+    document.getElementById('Blauw').textContent = data.leds.blauw ? "Blauwe LED: AAN" : "Blauwe LED: UIT";
+    document.getElementById('Rood').textContent = data.leds.rood ? "Rode LED: AAN" : "Rode LED: UIT";
     document.getElementById('Raamstatus').textContent = data.raam ? "OPEN" : "DICHT";
     document.getElementById('Aircostatus').textContent = data.airco ? "AAN" : "UIT";
 
