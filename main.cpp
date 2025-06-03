@@ -38,7 +38,7 @@ void loop() {
 
     if (temperatuur >= 25.0 && knopstatus) {
         Serial.println("De airco is actief.");
-        leds.groenAan();
+        leds.groenaan();
         groen = true;
         airco.aanzetten(true);
         aircoAan = true;
