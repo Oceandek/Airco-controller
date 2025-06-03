@@ -10,14 +10,14 @@
 <div id="Temp">
 
         <h1> Temperatuur:</h1>
-        <p id="Temp"> </p>
+        <p id="TempWaarde"> </p>
     
 </div>
 
 <div id="Knop">
 
     <h1> Knopwaarde:</h1>
-    <p id="Knop"> </p>
+    <p id="KnopWaarde"> </p>
 
 </div>
 
@@ -59,8 +59,8 @@ async function haalDataOp() {
     const json = await response.json();
     const data = json.record;
 
-    document.getElementById('Temp').textContent = data.temperatuur + " °C";
-    document.getElementById('Knop').textContent = data.knopwaarde ? "INGEDRUKT" : "NIET INGEDRUKT";
+    document.getElementById('TempWaarde').textContent = data.temperatuur + " °C";
+    document.getElementById('KnopWaarde').textContent = data.knopwaarde ? "INGEDRUKT" : "NIET INGEDRUKT";
     document.getElementById('Groen').textContent = data.leds.groen ? "Groene LED: AAN" : "Groene LED: UIT";
     document.getElementById('Blauw').textContent = data.leds.blauw ? "Blauwe LED: AAN" : "Blauwe LED: UIT";
     document.getElementById('Rood').textContent = data.leds.rood ? "Rode LED: AAN" : "Rode LED: UIT";
