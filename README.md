@@ -1,6 +1,6 @@
-# Slimme Airco Controller met Webvisualisatie 🌡️💨💡
+# Slimme Airco Controller met Webvisualisatie 
 
-Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersinput via een drukknop. Daarnaast worden de status van de airco, het raam, en de LEDs doorgestuurd naar **JsonBin.io** en visueel weergegeven op een eenvoudige website.
+Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersinput via een drukknop. Daarnaast worden de status van de airco, het raam, en de LEDs doorgestuurd naar **JsonBin.io** en visueel weergegeven op een eenvoudige website gehost op github zelf.
 
 ## 📦 Inhoud
 
@@ -8,20 +8,31 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 - `sensor.h / sensor.cpp` – leest een temperatuursensor en een drukknop uit
 - `JSONAPI.h / JSONAPI.cpp` – stuurt data naar JsonBin.io via WiFi
 - `index.html / styles.css` – toont de data van de airco, temperatuur, drukknop en LED-status op een overzichtelijke webpagina
+- - `main.cpp` – Linkt alle headers en cpp files samen tot een werkende Airco Controller
+
 
 ---
 
 ## 🔧 Hardwarebenodigdheden
 
-| Onderdeel           | Aantal | Beschrijving                       |
-|---------------------|--------|------------------------------------|
-| Arduino (ESP32/ESP8266) | 1      | Voor WiFi-connectiviteit          |
-| Temperatuursensor   | 1      | b.v. TMP36 of analoog thermistor  |
-| Drukknop            | 1      | Simuleert 'raam open'             |
-| LEDs                | 3      | Groen (aan), Rood (uit), Blauw (waarschuwing) |
-| Weerstanden         | 3      | Voor de LEDs                      |
-| Motor of Airco-actor| 1      | Wordt gestuurd op basis van temperatuur |
-| WiFi-netwerk        | 1      | Om data te versturen naar JsonBin.io |
+| Onderdeel           | Aantal | Beschrijving                                         |
+|---------------------|--------|------------------------------------------------------|
+| ESP32               | 1      | Om alles te schakelen                                |
+| Temperatuursensor   | 1      | AHT20 Temperatuursensor, kan temp en vocht uitlezen  |
+| Drukknop            | 1      | Simuleert 'raam open/toe'                            |
+| LEDs                | 3      | Groen (aan), Rood (uit), Blauw (waarschuwing)        |
+| Weerstanden         | 4(220Ω)| Voor de LEDs + Transistor                            |
+| Motor of Airco-actor| 1      | Wordt gestuurd op basis van temperatuur              |
+| WiFi-netwerk        | 1      | Om data te versturen naar JsonBin.io                 |
+| Transistor (NPN)    | 1      | Motor aansturen                                      |
+| Breadboard          | 2      | Om schakeling te maken                               |
+| Propellor           | 1      | Om de Airco te simuleren                             |
+| Jumper wires        | 10+    | Voor het maken van verbindingen op het breadboard     |
+
+
+
+
+
 
 ---
 
@@ -31,6 +42,7 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
    - Arduino standaardbibliotheek
    - WiFi (ESP32 of ESP8266 afhankelijk van je board)
    - ArduinoJSON (indien gewenst voor betere JSON-opbouw)
+   - AHT20 voor de temperatuursensor
 
 2. **JsonBin.io setup**:
    - Maak een account op [jsonbin.io](https://jsonbin.io)
@@ -47,14 +59,14 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 
 ## 📡 Functionaliteit
 
-| Sensor/Actuator | Functie |
-|-----------------|---------|
+| Sensor/Actuator   | Functie |
+|-------------------|---------|
 | Temperatuursensor | Meet omgevingstemperatuur |
-| Drukknop         | Simuleert of raam open/dicht is |
-| LEDs             | Groen = airco aan, Rood = uit, Blauw = waarschuwing |
-| Motor/Airco      | Wordt ingeschakeld als temperatuur ≥ 25 °C en raam is gesloten |
-| WiFi             | Stuurt live gegevens naar JsonBin |
-| Webpagina        | Toont temperatuur, knopstatus, raamstatus, aircostatus en LED-status |
+| Drukknop          | Simuleert of raam open/dicht is |
+| LEDs              | Groen = airco aan, Rood = uit, Blauw = waarschuwing |
+| Motor/Airco       | Wordt ingeschakeld als temperatuur ≥ 25 °C en raam is gesloten |
+| WiFi              | Stuurt live gegevens naar JsonBin |
+| Webpagina         | Toont temperatuur, knopstatus, raamstatus, aircostatus en LED-status |
 
 ---
 
@@ -72,16 +84,9 @@ Toont live status van het systeem via data die van JsonBin wordt opgehaald met J
 
 ---
 
-## 💡 Uitbreidingen
-
-- Gebruik een grafiekbibliotheek zoals Chart.js om historische temperaturen te visualiseren
-- Voeg een timer toe om te loggen wanneer de airco hoelang actief is geweest
-- Voeg ESPAsyncWebServer toe voor lokale hosting zonder JsonBin
-
----
 
 ## 📷 Screenshot (voorbeeld)
-
+https://prnt.sc/V3hBPQiEDX2v
 ---
 
 ---
