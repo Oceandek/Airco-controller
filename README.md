@@ -8,7 +8,7 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 - `sensor.h / sensor.cpp` – leest een temperatuursensor en een drukknop uit
 - `JSONAPI.h / JSONAPI.cpp` – stuurt data naar JsonBin.io via WiFi
 - `index.html / styles.css` – toont de data van de airco, temperatuur, drukknop en LED-status op een overzichtelijke webpagina
-- - `main.cpp` – Linkt alle headers en cpp files samen tot een werkende Airco Controller
+-  `main.cpp` – Linkt alle headers en cpp files samen tot een werkende Airco Controller
 
 
 ---
