@@ -86,7 +86,7 @@ Toont live status van het systeem via data die van JsonBin wordt opgehaald met J
 
 
 ## 📷 Screenshot (voorbeeld)
-https://prnt.sc/V3hBPQiEDX2v
+![Schema van de schakeling](web.png)
 ---
 
 ---
