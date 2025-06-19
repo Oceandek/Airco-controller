@@ -1,57 +1,63 @@
-Ocean doet sensoren, tempsensor en drukknop op ESP32
+Leerling 1: Ocean Dekeyser.
+Leerling 2: Vitaly Minkov.
+Leerling 3: Mauro Vanmaldeghem.
 
 
-Vitaly doet de motor en LED op Arduino en wacht op lln 1 tot hij klaar is met temp sensor te meten
+Ocean doet sensoren, tempsensor en drukknop op ESP32.
+
+
+Vitaly doet de motor en LED op Arduino en wacht op Leerling 1 tot hij klaar is met temp sensor te meten.
 
 
 
-Mauro Wacht op lln 1 en 2 tot ze klaar zijn
+Leerling 3 wacht op Leerling 1+2 tot ze klaar zijn.
 
 Backlog:
-Vitaly zal een rode/groene LED gebruiken en misschien een buzzer
+Vitaly zal een rode/groene LED gebruiken en misschien een buzzer.
 Ocean zal proberen de tempsensor uit te meten, indien dit niet lukt zal hij voor een andere zoeken.
-Hij zal ook een drukknop uitlezen
+Hij zal ook een drukknop uitlezen wanneer de waarde HIGH of LOW is.
 Mauro zal al proberen de main code correct te zetten tot vitaly en ocean klaar zijn.
 
 Vitaly zal kijken hoe hij de motor+ fan aanzet via arduino.
-benodigdheden
+benodigdheden:
 esp32
 arduino
-led groen rood
-temp sensor
-motor/ventilator
-drukknop
-ledstrip
+x3 led (groen rood blauw)
+Temperatuursensor AHT20
+DC-motor + ventilator
+Drukknop
 
 backlog items
 - aansturen led en documenteren
-- aansturen ledddimmer en docu
-- aansturen fan
-- aansturen motor DC
-- aansturen drukknop en tempsensor
+- aansturen ledddimmer en documenteren
+- Berekenen benodigde weerstandswaarde
+- aansturen DC-Motor
+- aansturen drukknop en temperatuursensor
 
 
-Vitaly zal 3 leds schakelen, 1 groene, 1 blauwe  en 1 rode
+Vitaly zal 3 leds schakelen, 1 groene, 1 blauwe  en 1 rode.
 
 
 Sprint 1:
 
-Ocean soldeert de temperatuursensor en meet deze uit, dan zet hij deze  op sensor.ccp 
-Vitaly doet de motor/leds op actuator.ccp en testen 
+Ocean soldeert de temperatuursensor en meet deze uit, dan zet hij deze  op sensor.ccp.
+Vitaly maakt de functies voor de motor/leds op actuator.cpp en actuator.h en test deze.
+Mauro bereidt de structuur voor om Sensor en Actuator te integreren in main.cpp.
 
 Sprint 2:
-Vitaly werkt de header en cpp file af voor de actuator en leds die gebruikt gaan worden in de main.
-Mauro past de klaargemaakte header en sensor ccp file toe aan de main (de main wordt door ocean in sprint 3 afgewerkt)
+Vitaly werkt de header en cpp file af voor de actuator en werkt de LED-logica uit voor groen, rood en blauw.
+Mauro past de klaargemaakte actuator en sensor cpp file toe aan de main (de main wordt door ocean in sprint 3 afgewerkt).
+Ocean test de uitlezing van de drukknop en de temperatuurwaarden.
 
 Sprint 3:
-Ocean doet afwerking website en main op basis van wat mauro heeft gedaan
-Vitaly doet aanpassingen voor regelbare snelheden 
-Mauro doet codestructuur/interface en implementeert beide secundaire c++ files
+Ocean doet afwerking website en main op basis van wat Mauro heeft gedaan.
+Vitaly doet aanpassingen voor regelbare snelheden.
+Mauro doet codestructuur/interface en implementeert beide secundaire c++ files.
 
 Sprint 4:
-Ocean implementeert de json api in de main.cpp om de websitegegevens te tonen
-Vitaly berekent de transistorwaarden
-Mauro werkt de main af.
+Ocean implementeert de JSON-api in de main.cpp om de gegevens van de temperatuursensor, de drukknop, en status van LEDS te tonen op de website.
+Vitaly berekent de transistorwaarden voor de motor.
+Mauro werkt de main af tot een volledig voltooid programma.
 
 
 
