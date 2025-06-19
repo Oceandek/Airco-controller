@@ -8,7 +8,7 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 - `sensor.h / sensor.cpp` – leest een temperatuursensor en een drukknop uit
 - `JSONAPI.h / JSONAPI.cpp` – stuurt data naar JsonBin.io via WiFi
 - `index.html / styles.css` – toont de data van de airco, temperatuur, drukknop en LED-status op een overzichtelijke webpagina
--  `main.cpp` – Linkt alle headers en cpp files samen tot een werkende Airco Controller
+-  `main.cpp` – Linkt/verbindt alle headers en cpp files samen tot een werkende Airco Controller
 
 
 ---
@@ -21,14 +21,14 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 | Temperatuursensor   | 1      | AHT20 Temperatuursensor, kan temp en vocht uitlezen  |
 | Drukknop            | 1      | Simuleert 'raam open/toe'                            |
 | LEDs                | 3      | Groen (aan), Rood (uit), Blauw (waarschuwing)        |
-| Weerstanden         | 4(220Ω)| Voor de LEDs + Transistor                            |
+| Weerstanden         | 4x (220Ω)| Voor de LEDs + Transistor                            |
 | Motor of Airco-actor| 1      | Wordt gestuurd op basis van temperatuur              |
 | WiFi-netwerk        | 1      | Om data te versturen naar JsonBin.io                 |
 | Transistor (NPN)    | 1      | Motor aansturen                                      |
 | Breadboard          | 2      | Om schakeling te maken                               |
 | Propellor           | 1      | Om de Airco te simuleren                             |
 | Jumper wires        | 10+    | Voor het maken van verbindingen op het breadboard     |
-| Externe Voeding        | 1    | Om de Motor de voeden     |
+| Externe Voeding        | 1    | Voor het aandrijven van de motor     |
 
 
 
