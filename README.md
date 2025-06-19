@@ -28,6 +28,8 @@ Dit Arduino-project stuurt een airco aan op basis van temperatuur en gebruikersi
 | Breadboard          | 2      | Om schakeling te maken                               |
 | Propellor           | 1      | Om de Airco te simuleren                             |
 | Jumper wires        | 10+    | Voor het maken van verbindingen op het breadboard     |
+| Externe Voeding        | 1    | Om de Motor de voeden     |
+
 
 
 
